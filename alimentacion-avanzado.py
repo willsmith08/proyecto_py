@@ -137,6 +137,11 @@ while True:
                         nombre=input("Escriba solo los nombres para registrar. ej: Will Smith: ")
                         if nombre == "0":
                             w_us=False
+                        elif nombre == "":
+                            for i in range(3):
+                                os.system("cls")
+                                print(f"\nNombre no puede estar vacio.\n")
+                                time.sleep(0.5)
                         elif bool(clv_numer.search(nombre)) == True:
                             for i in range(3):
                                 os.system("cls")
@@ -152,6 +157,11 @@ while True:
                         apellido=input(f"Escriba los apellidos del aprendiz {nombre} para registrar. ej Toncel Mercado: ")
                         if apellido == "0":
                             w_us=False
+                        elif apellido == "":
+                            for i in range(3):
+                                os.system("cls")
+                                print(f"\Apellido no puede estar vacio.\n")
+                                time.sleep(0.5)
                         elif bool(clv_numer.search(apellido)) == True:
                             for i in range(3):
                                 os.system("cls")
@@ -834,7 +844,7 @@ while True:
                         print("---Usuarios registrados---")
                         cont=0
                         for i in usuarios:
-                            print(f"Nombre: {nombres[cont]}  /  Apellidos: {apellidos[cont]}  /  Programa: {programas[cont]}  /  Semana: {semanas[cont]}  /  Cedula: {cedulas[cont]}  /  Correo: {correos[cont]}  /  Usuario: {usuarios[i]}  /  Contraseña: {contraseñas[cont]}")
+                            print(f"Nombre: {nombres[cont]}  /  Apellidos: {apellidos[cont]}  /  Programa: {programas_apre[cont]}  /  Semana: {semanas[cont]}  /  Cedula: {cedulas[cont]}  /  Correo: {correos[cont]}  /  Usuario: {usuarios[cont]}  /  Contraseña: {contraseñas[cont]}")
                             cont+=1
                         opcs=input("Digite el numero 0 para salir: ")
                         if opcs == "0":
@@ -913,15 +923,21 @@ while True:
                                             if cc_recu_con == 0:
                                                 break
                                             elif cc_recu_con in cedulas:
-                                                indice=cedulas.index(cc_recu_con)
-                                                while True:
-                                                    print(f"Contraseña {contraseñas[indice]}")
-                                                    opc_sa_rec=input("Digite el numero 0 para salir: ")
-                                                    if opc_sa_rec == "0":
-                                                        break
-                                                w_recu=False
-                                                w_recu_contra=False
-                                                break
+                                                if cedulas.index(cc_recu_con) != usuarios.index(ini_usu):
+                                                    for i in range(3):
+                                                        os.system("cls")
+                                                        print("Numero de identificacion no coincide con el usuario.")
+                                                        time.sleep(0.5)
+                                                else:
+                                                    indice=cedulas.index(cc_recu_con)
+                                                    while True:
+                                                        print(f"Contraseña {contraseñas[indice]}")
+                                                        opc_sa_rec=input("Digite el numero 0 para salir: ")
+                                                        if opc_sa_rec == "0":
+                                                            break
+                                                    w_recu=False
+                                                    w_recu_contra=False
+                                                    break
                                             else:
                                                 for i in range(3):
                                                     os.system("cls")
@@ -1051,6 +1067,11 @@ while True:
                         nombre=input("Escriba solo los nombres para registrar. ej: Will Smith: ")
                         if nombre == "0":
                             w_us=False
+                        elif nombre == "":
+                            for i in range(3):
+                                os.system("cls")
+                                print(f"\nNombre no puede estar vacio.\n")
+                                time.sleep(0.5)
                         elif bool(clv_numer.search(nombre)) == True:
                             for i in range(3):
                                 os.system("cls")
@@ -1066,6 +1087,11 @@ while True:
                         apellido=input(f"Escriba los apellidos del aprendiz {nombre} para registrar. ej Toncel Mercado: ")
                         if apellido == "0":
                             w_us=False
+                        elif apellido == "":
+                            for i in range(3):
+                                os.system("cls")
+                                print(f"\Apellido no puede estar vacio.\n")
+                                time.sleep(0.5)
                         elif bool(clv_numer.search(apellido)) == True:
                             for i in range(3):
                                 os.system("cls")
